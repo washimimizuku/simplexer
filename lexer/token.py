@@ -2,12 +2,12 @@ import enum
 
 
 class TokenType(enum.Enum):
-    IDENTIFIER = "IDENTIFIER"
-    KEYWORD = "KEYWORD"
-    SEPARATOR = "SEPARATOR"
-    OPERATOR = "OPERATOR"
-    LITERAL = "LITERAL"
-    COMMENT = "COMMENT"
+    IDENTIFIER = "IDENTIFIER"  # e.g x, color, UP
+    KEYWORD = "KEYWORD"  # e.g. if, while, return
+    SEPARATOR = "SEPARATOR"  # e.g. }, (, ;
+    OPERATOR = "OPERATOR"  # e.g. +, <, =
+    LITERAL = "LITERAL"  # e.g. true, 6.02e23, "music"
+    COMMENT = "COMMENT"  # e.g. /* Retrieves user data */, // must be negative
 
 
 class Token:

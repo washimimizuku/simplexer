@@ -6,7 +6,7 @@ from lexer.token import Token, TokenType, TokenError
 class TestToken(unittest.TestCase):
 
     def test_identifier_token_creation(self):
-        token_inputs = (TokenType.IDENTIFIER, 'ID', 'variable')
+        token_inputs = (TokenType.IDENTIFIER, 'ID', '[a-zA-Z_][a-zA-Z0-9_]*')
         token = Token(*token_inputs)
         self._test_token_creation(token, token_inputs)
 
