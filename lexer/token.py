@@ -11,18 +11,22 @@ class TokenType(enum.Enum):
 
 
 class Token:
-    def __init__(self, token_type: TokenType, literal: str) -> None:
+    def __init__(self, token_type: TokenType, name: str, value: str) -> None:
         if not isinstance(token_type, TokenType):
             raise TokenError
 
-        if not literal:
+        if not name:
+            raise TokenError
+
+        if not value:
             raise TokenError
 
         self.token_type = token_type
-        self.literal = literal
+        self.name = name
+        self.value = value
 
     def __str__(self):
-        return f'{self.token_type.name}="{self.literal}"'
+        return f'{self.name}:{self.token_type.name}="{self.value}"'
 
 
 class TokenError(Exception):
