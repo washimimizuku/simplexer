@@ -1,0 +1,40 @@
+# Token Definitions for Calculator
+# Format: TOKEN_NAME = regex_pattern [flags]
+# Flags: (ignore) - skip this token in parsing
+
+# Literals
+NUMBER = [0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?
+IDENTIFIER = [a-zA-Z_][a-zA-Z0-9_]*
+STRING = "([^"\\]|\\.)*"
+
+# Operators (in order of precedence, lowest to highest)
+ASSIGN = =
+PLUS = \+
+MINUS = -
+MULTIPLY = \*
+DIVIDE = /
+MODULO = %
+POWER = \^
+
+# Delimiters
+LPAREN = \(
+RPAREN = \)
+COMMA = ,
+SEMICOLON = ;
+
+# Keywords (could be handled as special identifiers)
+# IF = if
+# WHILE = while
+# FUNCTION = function
+
+# Ignored tokens
+WHITESPACE = [ \t\r\n]+ (ignore)
+LINE_COMMENT = //.*$ (ignore)
+BLOCK_COMMENT = /\*([^*]|\*[^/])*\*/ (ignore)
+
+# Token Definition Format Reference:
+# - Use standard regex syntax
+# - Escape special regex characters: + * ? ^ $ | \ ( ) [ ] { }
+# - Use (ignore) flag for tokens that should be skipped
+# - Order matters: first match wins
+# - Longer matches take precedence over shorter ones
